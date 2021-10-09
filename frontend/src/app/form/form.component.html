@@ -1,0 +1,30 @@
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <h1>Añada un nuevo libro</h1>
+    <div class="row">
+      <label for="title">Título: </label>
+      <input type="text" formControlName="title"/>
+    </div>
+    <span class="error ion-padding" *ngIf="submitted && errorCtr.title.errors?.required">
+      Se requiere un título
+    </span>
+
+    <div class="row">
+      <label for="author">Autor: </label>
+      <input type="text" formControlName="author"/>
+    </div>
+    <span class="error ion-padding" *ngIf="submitted && errorCtr.author.errors?.required">
+      Se requiere un Autor
+    </span>
+
+    <div class="row">
+      <label for="title">Año de Escritura: </label>
+      <input type="number" formControlName="year"/>
+    </div>
+    <span class="error ion-padding" *ngIf="submitted && errorCtr.year.errors?.required">
+      Se requiere un Año
+    </span>
+    <input type="submit" class="btn btn-dark btn-lg" value="Guardar" >
+    <ion-button color="danger" (click)="goToHome()">Cancelar</ion-button>
+  </form>
+</div>
