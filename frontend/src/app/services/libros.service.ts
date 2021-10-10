@@ -37,7 +37,7 @@ export class LibrosService {
 
     console.log("addLibro")
     console.log(JSON.stringify(libro))
-    return this.httpClient.post<Libro>(this.endpoint, body, httpOptions);
+   return this.httpClient.post<Libro>(this.endpoint, body, httpOptionsUsingUrlEncoded);
   }
 
   deleteLibro(idLibro: number): Observable<Libro>{
